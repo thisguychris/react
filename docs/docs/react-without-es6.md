@@ -97,12 +97,13 @@ In React components declared as ES6 classes, methods follow the same semantics a
 class SayHello extends React.Component {
   constructor(props) {
     super(props);
+    this.state = { message: 'Hello!' };
     // This line is important!
     this.handleClick = this.handleClick.bind(this);
   }
 
   handleClick() {
-    alert('Hello!');
+    alert( this.state.message );
   }
 
   render() {
